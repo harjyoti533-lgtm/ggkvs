@@ -1,16 +1,35 @@
-[
+# 1️⃣ Create project folder and move inside
+mkdir myproject
+cd myproject
+
+# 2️⃣ Create the two files
+echo '[
   {
-    "id": "6d95fal7c7e40bea",
-    "username": "dpmods",
-    "password": "dpmods",
-    "expiresAt": "2025-12-31",
-    "allowOffline": true
-  },
-  {
-    "id": "android_device_id_2",
-    "username": "user2",
-    "password": "pass2",
-    "expiresAt": "2025-11-30",
-    "allowOffline": false
+    "expiresAt": "2025-10-10 11:59 PM",
+    "allowOffline": true,
+    "channelLink": "https://t.me/yourchannel",
+    "applyToAllDevices": true
   }
-]
+]' > users.json
+
+echo '# Ignore node & environment files
+node_modules/
+.env
+*.log
+.DS_Store
+Thumbs.db
+private/
+secrets/' > .gitignore
+
+# 3️⃣ Initialize git
+git init
+git add .
+git commit -m "Initial commit: Global config for all devices"
+
+# 4️⃣ Create a new PRIVATE repo on GitHub (via web)
+# Example: https://github.com/YOUR_USERNAME/myproject
+
+# 5️⃣ Connect local repo with GitHub and push
+git branch -M main
+git remote add origin https://github.com/YOUR_USERNAME/myproject.git
+git push -u origin main
